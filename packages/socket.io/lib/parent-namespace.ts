@@ -31,7 +31,7 @@ export class ParentNamespace<
   ListenEvents extends EventsMap = DefaultEventsMap,
   EmitEvents extends EventsMap = ListenEvents,
   ServerSideEvents extends EventsMap = DefaultEventsMap,
-  SocketData = any
+  SocketData = any,
 > extends Namespace<ListenEvents, EmitEvents, ServerSideEvents, SocketData> {
   private static count: number = 0;
   private readonly children: Set<

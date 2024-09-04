@@ -180,7 +180,7 @@ export class Socket<
   ListenEvents extends EventsMap = DefaultEventsMap,
   EmitEvents extends EventsMap = ListenEvents,
   ServerSideEvents extends EventsMap = DefaultEventsMap,
-  SocketData = any
+  SocketData = any,
 > extends StrictEventEmitter<
   ListenEvents,
   EmitEvents,

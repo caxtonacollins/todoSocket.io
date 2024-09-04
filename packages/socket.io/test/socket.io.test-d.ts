@@ -184,7 +184,7 @@ describe("server", () => {
   ) => boolean;
   type ToEmitWithAck<
     Map extends EventsMap,
-    Ev extends keyof Map = keyof Map
+    Ev extends keyof Map = keyof Map,
   > = (ev: Ev, ...args: Parameters<Map[Ev]>) => ReturnType<Map[Ev]>;
   interface ClientToServerEvents {
     noArgs: () => void;
@@ -652,7 +652,10 @@ describe("server", () => {
       io.adapter(Adapter);
 
       class MyCustomAdapter extends Adapter {
-        constructor(nsp, readonly opts) {
+        constructor(
+          nsp,
+          readonly opts
+        ) {
           super(nsp);
         }
       }

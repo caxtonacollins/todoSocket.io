@@ -144,7 +144,7 @@ export class Server<
   ListenEvents extends EventsMap = DefaultEventsMap,
   EmitEvents extends EventsMap = ListenEvents,
   ServerSideEvents extends EventsMap = DefaultEventsMap,
-  SocketData = any
+  SocketData = any,
 > extends StrictEventEmitter<
   ServerSideEvents,
   RemoveAcknowledgements<EmitEvents>,
@@ -1091,11 +1091,11 @@ export class Server<
  * Expose main namespace (/).
  */
 
-const emitterMethods = Object.keys(EventEmitter.prototype).filter(function (
-  key
-) {
-  return typeof EventEmitter.prototype[key] === "function";
-});
+const emitterMethods = Object.keys(EventEmitter.prototype).filter(
+  function (key) {
+    return typeof EventEmitter.prototype[key] === "function";
+  }
+);
 
 emitterMethods.forEach(function (fn) {
   Server.prototype[fn] = function () {

@@ -146,7 +146,7 @@ interface SocketReservedEvents {
  */
 export class Socket<
   ListenEvents extends EventsMap = DefaultEventsMap,
-  EmitEvents extends EventsMap = ListenEvents
+  EmitEvents extends EventsMap = ListenEvents,
 > extends Emitter<ListenEvents, EmitEvents, SocketReservedEvents> {
   public readonly io: Manager<ListenEvents, EmitEvents>;
 

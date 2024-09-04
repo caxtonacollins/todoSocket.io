@@ -35,7 +35,7 @@ expect.Assertion.prototype.contain = function (...args) {
 
 export function createClient<
   CTS extends EventsMap = DefaultEventsMap,
-  STC extends EventsMap = DefaultEventsMap
+  STC extends EventsMap = DefaultEventsMap,
 >(
   io: Server,
   nsp: string = "/",
